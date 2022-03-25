@@ -13,15 +13,13 @@ hold on;
 plot(t, 0);
 hold off;
 # Dos soluciones reales
-# Intervalo 1:[-1, 1]
-# Intervalo 2:[7, 10] (la mayor de las soluciones)
-
-### plot(t, sin(t), t, sin(t + 0.2), t, sin(t + 0.8), [10, 20])
+# Intervalo:[7, 10] (la mayor de las soluciones)
 
 # c) Aplicar biseccion
-e = 0.05;
+tol = 0.05;
 a = 7;
 b = 10;
+m = (a + b) / 2;
 i = 0;
 err = b - a;
 printf("Aplicamos biseccion. Tabla:\n")
@@ -29,8 +27,6 @@ printf("Iteracion,  a            b            m       cota de error\n")
 
 do
     i++;
-    m = (a + b) / 2;
-    printf("%2i, %12.4f %12.4f %12.4f %12.4f\n", i, a, b, m, err);
 
     if (f(a) * f(m) < 0)
         b = m;
@@ -38,10 +34,11 @@ do
         a = m;
     endif
 
-    err = b - a;
-until err < e
+    m = (a + b) / 2;
+    err /= 2;
+    printf("%2i, %12.4f %12.4f %12.4f %12.4f\n", i, a, b, m, err);
 
-printf("%2i, %12.4f %12.4f %12.4f %12.4f\n", i, a, b, m, err);
+until err < tol
 
 # Hacer NR en ese intervalo [a, b]
 #Derivada de f, calculada a parte
@@ -52,12 +49,12 @@ function y = g(x)
 endfunction
 
 i = 0;
-x_n = (a + b) / 2;
+x_n = x_next = (a + b) / 2;
 
 do i++;
-    x_next = x_n - f(x_n) / g(x_n);
-    err = abs(x_next - x_n) #Aprovechamos para que imprima estos valores a la consola
     x_n = x_next;
-until err / abs(x_n) < 10^(-6) || i > 50
+    x_next = x_n - f(x_n) / g(x_n);
+    err = abs(x_next - x_n);
+until err / abs(x_n) < 10^(-6) || i > 200
 
-printf("Aproximacion de la raiz: %7.6f\n", x_next)
+printf("Las dos ultimas aproximaciones de la raiz son %7.10f y %7.10f\n", x_n, x_next);
