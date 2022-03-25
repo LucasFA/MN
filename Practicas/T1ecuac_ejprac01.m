@@ -25,7 +25,7 @@ b = 10;
 i = 0;
 err = b - a;
 printf("Aplicamos biseccion. Tabla:\n")
-printf("Iteracion,  a,           b,           m,      cota de error\n")
+printf("Iteracion,  a            b            m       cota de error\n")
 do i++;
     m = (a + b) / 2;
     printf("%2i, %12.4f %12.4f %12.4f %12.4f\n", i, a, b, m, err);
