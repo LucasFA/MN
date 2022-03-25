@@ -2,7 +2,7 @@
 
 clc; clear; more off;
 function y = f(x)
-  y = x.*exp( -x / 3) - 0.5;
+y = x .* exp(-x / 3) - 0.5;
 endfunction
   
 
@@ -27,7 +27,7 @@ err = b - a;
 printf("Aplicamos biseccion. Tabla:\n")
 printf("Iteracion,  a,           b,           m,      cota de error\n")
 do i++;
-    m = (a+b)/2;
+    m = (a + b) / 2;
     printf("%2i, %12.4f %12.4f %12.4f %12.4f\n", i, a, b, m, err);
     if ( f(a)*f(m) < 0)
       b = m;
@@ -42,12 +42,12 @@ printf("%2i, %12.4f %12.4f %12.4f %12.4f\n", i, a, b, m, err);
 #Derivada de f, calculada a parte
 printf("\nAhora en ese intervalo aplicamos Newton-Raphson\n")
 function y = g(x)
-    y = -((x-3)*e^(-x/3))/3;
+    y = -((x - 3) * e^(-x / 3)) / 3;
 endfunction
 i = 0;
-x_n = (a+b)/2;
+x_n = (a + b) / 2;
 do i++;
-    x_next = x_n - f(x_n)/g(x_n);
+    x_next = x_n - f(x_n) / g(x_n);
     err = abs(x_next - x_n) #Aprovechamos para que imprima estos valores a la consola
     x_n = x_next;
 until err/abs(x_n) < 10^(-6) || i > 50

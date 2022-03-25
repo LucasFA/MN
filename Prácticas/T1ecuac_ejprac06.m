@@ -3,11 +3,11 @@ clear all;
 more off;
 
 function y = f(x)
-  y = x.^3+9*x+9;
+y = x.^3 + 9 * x + 9;
 endfunction
 function y = deriv_f(x)
-  y = 3*x.^2+9;
-  endfunction
+  y = 3 * x.^2 + 9;
+endfunction
 
 printf("Aplicaremos el metodo de la secante a la funcion f del ejercicio 2\n\n")
 

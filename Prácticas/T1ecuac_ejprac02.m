@@ -3,17 +3,17 @@ clear all;
 more off;
 
 function y = f(x)
-  y = x.^3 + 9*x + 9;
+  y = x.^3 + 9*x + 9; 
 endfunction
 
 function y = g1(x)
-    y = -x.^3/9-1;
+    y = -x.^3/9-1; 
 endfunction
 function y = g2(x)
-    y = -9./(x.^2+9);
+    y = -9./(x.^2+9); 
 endfunction
 function y = g3(x)
-    y = x.^3+10*x.+9;
+    y = x.^3+10*x.+9; 
 endfunction
 function y = g4(x)
     y = (2*x.^3-9)./(3*(x.^2+3));
