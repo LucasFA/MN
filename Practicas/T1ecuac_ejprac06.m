@@ -12,11 +12,11 @@ endfunction
 
 printf("Aplicaremos el metodo de la secante a la funcion f del ejercicio 2\n\n")
 
-printf("Semilla  aproximacion  numero de iteraciones     mensaje\n");
+printf("Semilla  aproximacion  iteraciones     mensaje\n");
 
 semillas = linspace(-3, -0.3, 10);
 
 for s = semillas
     [aprox, n, msg] = fSecante(@f, s, s + 0.01, 10^(-5), 100);
-    printf("%14,3f %14.6f %12f %s \n", s, aprox, n, msg);
+    printf("%.2f  %14.9f  %7i       %s \n", s, aprox, n, msg);
 endfor

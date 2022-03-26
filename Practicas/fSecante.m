@@ -1,11 +1,10 @@
-function [x1, n, msg] = fSecante(f, x0, x1, tol, nmax)
-    x1 = 0;
+function [x2, n, msg] = fSecante(f, x0, x1, tol, nmax)
     n = 0; %numero de iteraciones
     msg = "Error";
 
     if tol <= 0
         msg = "error < 0"
-        return
+        return;
     endif
 
     if nmax < 2 || nmax > 1000
@@ -21,11 +20,11 @@ function [x1, n, msg] = fSecante(f, x0, x1, tol, nmax)
 
         x2 = x1 - ((x1 - x0) / (f1 - f0)) * f1;
 
+        n++;
+        error = abs((x2 - x1)/x2);
         x0 = x1;
         x1 = x2;
-        error = x2 - x1;
-        n++;
-    until (error > tol && n <= nmax)
+    until (error < tol || n >= nmax)
 
     % Mensaje de salida
     if n >= nmax
