@@ -22,4 +22,4 @@ do
     n++;
 until (norm(x1 - x0, 1) < tol || n > nmax)
 
-printf("Se obtiene la solución aproximada (%0.6f,%0.6f) tras %i iteraciones\n", x1(1), x1(2), n)
+printf("Se obtiene la solucion aproximada (%.6f,%.6f) tras %i iteraciones\n", x1, n)
