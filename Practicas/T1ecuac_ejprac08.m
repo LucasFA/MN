@@ -14,7 +14,7 @@ function x3 = Muller(f, x0, x1, x2)
     a = (d1 - d0) / (x2 - x0);
     b = d0 - a * (x0 + x1);
     c = f0 - x0 * d0 + a * x0 * x1;
-
+	# No es así
     x3 = x2 - (a * x2^2 + b * x2 +c) / (2 * a * x2 + b);
 endfunction
 
