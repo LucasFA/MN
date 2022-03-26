@@ -1,8 +1,8 @@
-function [x2, n, msg] = fSecante(f, x0, x1, tol, nmax)
+function [x2, n, msg] = fSecante(f, x0, x1, tol, nmax=100)
     n = 0; %numero de iteraciones
     msg = "Error";
 
-    if tol <= 0
+    if tol < 0
         msg = "error < 0"
         return;
     endif
