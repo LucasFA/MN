@@ -21,7 +21,7 @@ function [x1, n, msg] = fNewtonRaphson(f, f1, x0, tol = 0.000001, nmax = 100)
         x0 = x1;
     endwhile
 
-    %printf("Error actual: %e,\n tolerancia %e\n en %i iteraciones\n con maximo de %i\n\n", error, tol, n, nmax)
+    
     % Mensaje de salida
     if n >= nmax
         msg = "Límite de iteraciones excedido. No converge";
