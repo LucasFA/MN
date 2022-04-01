@@ -47,6 +47,18 @@ function x3 = Muller(f, x0, x1, x2)
     #r1 = 2 * c / (b + discr);
     r2 = (-b^2 - discr) / (2 * c);
     #r1 = 2 * c / (b - discr);
+    #code for debugging:
+    % disp("r1 y r2 son:")
+    % disp(r1)
+    % disp(r2)
+    % t = linspace(0, 3, 50);
+    % plot(t, f(t));
+    % hold on;
+    % plot([0 4], [0 0]);
+    % plot(t, a.*t.^2 + b.*t + c);
+    
+    % hold off
+    # ends code for debugging
     dif1 = abs(r1 - x2);
     dif2 = abs(r2 - x2);
     if (dif1 < dif2)
@@ -54,6 +66,10 @@ function x3 = Muller(f, x0, x1, x2)
     else
         x3 = x2 + r2;
     endif
+
+    % disp("x3 es: ")
+    % disp(x3)
+    % input("Dime algo");
 endfunction
 
 % Apartado b
