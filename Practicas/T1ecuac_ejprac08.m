@@ -39,20 +39,45 @@ function x3 = Muller(f, x0, x1, x2)
     a = (d1 - d0) / (x2 - x0);
     b = d0 - a * (x0 + x1);
     c = f0 - x0 * d0 + a * x0 * x1;
-	# No es así
-    x3 = x2 - (a * x2^2 + b * x2 +c) / (2 * a * x2 + b);
+    # p(x) = ax^2 + bx + c interpola los 3 puntos (xi, f(xi))
+
+    discr = sqrt(b^2 - 4 * a * c);
+
+    r1 = (-b^2 + discr) / (2 * c);
+    #r1 = 2 * c / (b + discr);
+    r2 = (-b^2 - discr) / (2 * c);
+    #r1 = 2 * c / (b - discr);
+    dif1 = abs(r1 - x2);
+    dif2 = abs(r2 - x2);
+    if (dif1 < dif2)
+        x3 = x2 + r1;
+    else
+        x3 = x2 + r2;
+    endif
 endfunction
 
 % Apartado b
 x = [1.3, 1.4, 1.5];
+x0 = x(1); x1 = x(2); x2 = x(3);
 numero_iteraciones = 6;
-
+x_muller = x;
+x_NR2 = x;
 for n = 4:(3 + numero_iteraciones)
-    x(n) = Muller(@f, x(n - 3), x(n - 2), x(n - 1));
+    x_muller(n) = Muller(@f, x_muller(n - 3), x_muller(n - 2), x_muller(n - 1));
+    x_NR2(n) = NR2(x_NR2(n - 1));
 endfor
 
+% z0 = 0;
+% formato = "%18.14f";
+% printf(["%3d " formato "\n"], 0, x0);
+% printf(["%3d " formato "\n"], 1, x1);
+% printf(["%3d " formato formato "\n"], 2, x2, z0)
+
 printf("Tabla:\n");
-printf("n   aprox\n");
-for n = 1:(numero_iteraciones + 3)
-    printf("%i  %.8f\n", n, x(n));
+printf("n   Muller            NR2\n");
+for n = 1:2
+    printf("%i  %12.8f\n", n, x_muller(n));
+endfor
+for n = 3:(numero_iteraciones + 3)
+    printf("%i  %12.8f  %12.8f\n", n, x_muller(n), x_NR2(n))
 endfor
