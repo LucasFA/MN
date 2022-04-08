@@ -17,7 +17,7 @@ function aprox = fNR(@f, a, b)
     printf("x     f(x)     error ")
 
     do
-        x1 = x0 + f(x0) / fd(x0)
+        x1 = x0 - f(x0) / fd(x0)
         error = abs(x1 - x0) / abs(x0)
         printf("%.6f,%.6f %.6f", x1, f(x1), error)
     until (error < tol)
