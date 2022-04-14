@@ -75,7 +75,7 @@ endfunction
 % Apartado b
 x = [1.3, 1.4, 1.5];
 x0 = x(1); x1 = x(2); x2 = x(3);
-numero_iteraciones = 6;
+numero_iteraciones = 15;
 x_muller = x;
 x_NR2 = x;
 for n = 4:(3 + numero_iteraciones)
@@ -89,11 +89,18 @@ endfor
 % printf(["%3d " formato "\n"], 1, x1);
 % printf(["%3d " formato formato "\n"], 2, x2, z0)
 
+formato = '%12.8f'
 printf("Tabla:\n");
-printf("n   Muller            NR2\n");
+disp('===========================================')
+printf(" n |    Muller        NR2\n");
+disp("----------------------------")
+
 for n = 1:2
-    printf("%i  %12.8f\n", n, x_muller(n));
+    printf(["%2i |" formato "\n"], n, x_muller(n));
 endfor
 for n = 3:(numero_iteraciones + 3)
-    printf("%i  %12.8f  %12.8f\n", n, x_muller(n), x_NR2(n))
+    printf(["%2i |" formato formato "\n"], n, x_muller(n), x_NR2(n))
 endfor
+
+disp('===========================================')
+disp("==== FIN DEL EJERCICIO ====")
