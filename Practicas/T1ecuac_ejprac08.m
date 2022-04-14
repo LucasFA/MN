@@ -43,9 +43,9 @@ function x3 = Muller(f, x0, x1, x2)
 
     discr = sqrt(b^2 - 4 * a * c);
 
-    r1 = (-b^2 + discr) / (2 * c);
+    r1 = (-b + discr) / (2 * a);
     #r1 = 2 * c / (b + discr);
-    r2 = (-b^2 - discr) / (2 * c);
+    r2 = (-b - discr) / (2 * a);
     #r1 = 2 * c / (b - discr);
     #code for debugging:
     % disp("r1 y r2 son:")
@@ -62,9 +62,9 @@ function x3 = Muller(f, x0, x1, x2)
     dif1 = abs(r1 - x2);
     dif2 = abs(r2 - x2);
     if (dif1 < dif2)
-        x3 = x2 + r1;
+        x3 = r1;
     else
-        x3 = x2 + r2;
+        x3 = r2;
     endif
 
     % disp("x3 es: ")
