@@ -16,11 +16,11 @@ function x1 = NR2(x0)
     fu0 = f(x0);
     fu1 = f1(x0);
     fu2 = f2(x0);
-    # p(x) = ax^2 + bx + c = fu2 / 2 * x^2 + f1 * x + f0 la parábola que interpola f(x0) f'(x0) y f''(x0)
-    discr = sqrt(fu1^2 - 2 * fu0 * fu2); # bueno, el discriminante sería lo de dentro de la raíz
-    h1 = (-fu1 + discr) / fu2; # x + h1, x + h2 son las raíces de la parábola
+    # p(x) = ax^2 + bx + c = fu2 / 2 * x^2 + f1 * x + f0 la parabola que interpola f(x0) f'(x0) y f''(x0)
+    discr = sqrt(fu1^2 - 2 * fu0 * fu2); # bueno, el discriminante seria lo de dentro de la raiz
+    h1 = (-fu1 + discr) / fu2; # x + h1, x + h2 son las raices de la parabola
     h2 = (-fu1 - discr) / fu2;
-    if (abs(h1) < abs(h2)) # tomamos la raíz más cercana a x0
+    if (abs(h1) < abs(h2)) # tomamos la raiz mas cercana a x0
         x1 = x0 + h1;
     else
         x1 = x0 + h2;
