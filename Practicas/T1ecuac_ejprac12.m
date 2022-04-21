@@ -26,8 +26,8 @@ for iteraciones = [50 100 150 200]
     endfor
 endfor
 
-printf(["\n" "Se observa que el metodo converge (para cualquier semillas, de hecho), " \
-    "pero los puntos que casi anulan la derivada de F \n" \
+printf(["\n" "Se observa que el metodo converge (para cualquier semillas, de hecho), " ...
+    "pero los puntos que casi anulan la derivada de F \n" ...
     "son patologicos y causan grandes cambios en el valor de la aproximacion\n"]);
 
 t = linspace(0, 1, 101);
