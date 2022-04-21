@@ -17,7 +17,7 @@ function [m n] = triseccion(a, b, tol)
         fm1 = f(m1);
         if (fa * fm1 < 0) # tercio izquierdo
             b = m1; fb = fm1;
-            continue # goto do:al principio del bucle. Al final del archivo está la version "original"
+            continue # esto es un goto do, al principio del bucle. Al final del archivo está la version "original"
         endif
         # los otros 2 tercios
         fm2 = f(m2);
