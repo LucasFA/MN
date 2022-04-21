@@ -12,12 +12,16 @@ t = linspace(-10, 10, 100);
 plot(t, F(t));
 line([-10 10], [0 0]);
 
+function x1 = pasoNR(x0)
+    x1 = x0 - F(x0) / F_prima(x0);
+endfunction
+
 x = [13 13];
 for iteraciones = [50 100 150 200]
     printf("\nCon %3d iteraciones:\n", iteraciones);
 
     for n = 2:iteraciones
-        x(n) = x(n - 1) - F(x(n - 1)) / F_prima(x(n - 1));
+        x(n) = pasoNR(x(n - 1));
         error = abs(x(n) - x(n - 1));
         % if (mod(n, 3) == 0)
         formato = "%14.2f";
@@ -27,10 +31,7 @@ for iteraciones = [50 100 150 200]
 endfor
 
 printf(["\n" "Se observa que el metodo converge (para cualquier semillas, de hecho), " ...
-    "pero los puntos que casi anulan la derivada de F \n" ...
-    "son patologicos y causan grandes cambios en el valor de la aproximacion\n"]);
-
-t = linspace(0, 1, 101);
-function x1 = pasoNR(x0)
-    x1 = x0 - F(x0) / F_prima(x0); 
-endfunction
+        "pero los puntos que casi anulan la derivada de F \n" ...
+        "son patologicos y causan grandes cambios en el valor de la aproximacion\n"
+    ]
+);
