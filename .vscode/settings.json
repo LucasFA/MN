@@ -1,6 +1,6 @@
 {
 	"files.encoding": "windows1252",
-	"editor.formatOnSaveMode": "file",
+	"editor.formatOnSaveMode": "modificationsIfAvailable",
 	"editor.detectIndentation": false,
 	"editor.stickyTabStops": true
 }
