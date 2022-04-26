@@ -4,7 +4,7 @@ function y = f(x)
     y = [4 * x(1)^2 + x(2)^2 - 4; x(1) + x(2) - sin(x(1) - x(2))];
 endfunction
 
-% El jacobiano de la f definida aquí ^ encima
+% El jacobiano de la f definida aquï¿½ ^ encima
 function M = J(x)
     M = [8 * x(1), 2 * x(2); 1 - cos(x(1) - x(2)), 1 + cos(x(1) - x(2))];
 endfunction
@@ -22,4 +22,4 @@ do
     n++;
 until (norm(x1 - x0, 1) < tol || n > nmax)
 
-printf("Se obtiene la solucion aproximada (%.6f,%.6f) tras %i iteraciones\n", x1, n)
+printf("Se obtiene la solucion aproximada (%.6f,%.6f) tras %d iteraciones\n", x1, n)
