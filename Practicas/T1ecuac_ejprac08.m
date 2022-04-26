@@ -54,7 +54,7 @@ function x3 = Muller(f, x0, x1, x2)
     endif
 endfunction
 
-% Apartado b
+# Apartado b
 x = [1.3, 1.4, 1.5];
 x0 = x(1); x1 = x(2); x2 = x(3);
 numero_iteraciones = 15;

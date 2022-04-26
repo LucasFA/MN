@@ -4,18 +4,18 @@ function y = f(x)
     y = [4 * x(1)^2 + x(2)^2 - 4; x(1) + x(2) - sin(x(1) - x(2))];
 endfunction
 
-% El jacobiano de la f definida aqu� ^ encima
+# El jacobiano de la f definida aqu� ^ encima
 function M = J(x)
     M = [8 * x(1), 2 * x(2); 1 - cos(x(1) - x(2)), 1 + cos(x(1) - x(2))];
 endfunction
 
-% Inicializamos
+# Inicializamos
 nmax = 100;
 tol = 10^(-8);
 x0 = x1 = [0.5; 0.5];
 n = 0;
 
-% Ejecutamos NR
+# Ejecutamos NR
 do
     x0 = x1;
     x1 = x0 - J(x0) \ f(x0);

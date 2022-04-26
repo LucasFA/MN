@@ -1,6 +1,6 @@
 clc; clear all; more off;
 
-disp("Ejercicio prácticos-- ecuaciones")
+disp("Ejercicio prï¿½cticos-- ecuaciones")
 
 function y = f(x)
     y = exp(x / 4) + cos(pi * x) - 1.5;
@@ -17,7 +17,7 @@ function [m n] = triseccion(a, b, tol)
         fm1 = f(m1);
         if (fa * fm1 < 0) # tercio izquierdo
             b = m1; fb = fm1;
-            continue # esto es un goto do, al principio del bucle. Al final del archivo está la version "original"
+            continue # esto es un goto do, al principio del bucle. Al final del archivo estï¿½ la version "original"
         endif
         # los otros 2 tercios
         fm2 = f(m2);
@@ -47,22 +47,22 @@ endfor
 
 disp("FIN DEL EJERCICIO")
 
-% do
-%     n++;
-%     m1 = (2 * a + b) / 3;
-%     m2 = (a + 2 * b) / 3;
-%     fm1 = f(m1);
-%     if (fa * fm1 < 0) # tercio izquierdo
-%         b = m1; fb = fm1;
-%     else
-%         # los otros 2 tercios
-%         fm2 = f(m2);
-%         if (fm2 * fb < 0) # tercio derecho
-%             a = m2; fa = fm2;
-%         else
-%             # tercio central, por descarte
-%             a = m1; fa = fm1;
-%             b = m2; fb = fm2;
-%         endif
-%     endif
-% until b - a <= 2 * tol;
+# do
+#     n++;
+#     m1 = (2 * a + b) / 3;
+#     m2 = (a + 2 * b) / 3;
+#     fm1 = f(m1);
+#     if (fa * fm1 < 0) # tercio izquierdo
+#         b = m1; fb = fm1;
+#     else
+#         # los otros 2 tercios
+#         fm2 = f(m2);
+#         if (fm2 * fb < 0) # tercio derecho
+#             a = m2; fa = fm2;
+#         else
+#             # tercio central, por descarte
+#             a = m1; fa = fm1;
+#             b = m2; fb = fm2;
+#         endif
+#     endif
+# until b - a <= 2 * tol;

@@ -29,9 +29,9 @@ function out = aplicar_aitken(g, x_0, numero_terminos)
 endfunction
 
 function out = aplicar_steffensen(g, x_0, control_iteraciones = 1000)
-    % recordamos que nuestra implementación de Aitken llama a iteracion funcional
-    % con lo cual nos ahorramos llamar a aplicar_iteracion_funcional y sobre ese resultado aplicar Aitken,
-    % y se hace directamente.
+    # recordamos que nuestra implementaciï¿½n de Aitken llama a iteracion funcional
+    # con lo cual nos ahorramos llamar a aplicar_iteracion_funcional y sobre ese resultado aplicar Aitken,
+    # y se hace directamente.
     if (control_iteraciones < 0)
         return;
     endif
@@ -59,7 +59,7 @@ function out = aplicar_steffensen(g, x_0, control_iteraciones = 1000)
 endfunction
 
 
-% Apartado a
+# Apartado a
 x0 = -1.5;
 iteraciones_a_hacer = 12;
 
@@ -85,7 +85,7 @@ printf("Naturalmente, la sucesion de Aitken y Steffensen convergen mas rapidamen
 Steffensen tiene en cada fila los mismos valores que Aitken pues es lo mismo");
 printf("\n")
 
-% Apartado b
+# Apartado b
 aprox_stef = aplicar_steffensen(@g3, x_0 = -1.5, 10^(-8));
 printf("Aplicamos el metodo de Steffensen a g3. En cada linea tenemos una iteracion\n\n");
 

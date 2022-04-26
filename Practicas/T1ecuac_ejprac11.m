@@ -52,7 +52,7 @@ for s = 1:rows(semillas)
     printf("en %2d iteraciones se obtuvo [%18.14f %18.14f]\n", n, x1);
 endfor
 
-% plot([x1(1 semillas(s, 1))], [x1(2) semillas(s, 2)], ); # no sé qué iba a hacer aquí, pero bueno (no está terminado d ecopiar)
-% plot(x1(1), x1(2));
+# plot([x1(1 semillas(s, 1))], [x1(2) semillas(s, 2)], ); # no sï¿½ quï¿½ iba a hacer aquï¿½, pero bueno (no estï¿½ terminado d ecopiar)
+# plot(x1(1), x1(2));
 printf("Observamos que hemos encontrado 3 soluciones distintas\n");
 disp("FIN DE EJERCICIO");
