@@ -46,9 +46,9 @@ function out = aplicar_iteracion_funcional (g, x0 = -1.5, numero_iteraciones = 1
     out = x1;
 endfunction
 
-printf("Recordamos que la convergencia de \
-la iteracion funcional requiere \ nque la derivada del metodo sea menor que 1 \
-en el punto fijo, es decir:tenga pendiente menor que 1 en valor absoluto \ n")
+printf(["Recordamos que la convergencia de " ...
+        "la iteracion funcional requiere \nque la derivada del metodo sea menor que 1 " ...
+        "en el punto fijo, es decir: tenga pendiente menor que 1 en valor absoluto\n"])
 
 %x0 = -1.5;
 %iteraciones = 10;
@@ -59,7 +59,7 @@ plot(t, t - g1(t), [-3, 0], [0, 0]);
 axis([-1.5, -0.5, -0.5, 0.5], "square");
 input("Presione enter para continuar");
 
-disp("Método con g2\n");
+disp("Mï¿½todo con g2\n");
 aplicar_iteracion_funcional(@g2);
 plot(t, t - g2(t), [-3, 0], [0, 0]);
 axis([-1.5, -0.5, -0.5, 0.5], "square");
