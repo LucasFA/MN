@@ -5,22 +5,27 @@ disp("Ejercicio 2. Derivacion numerica")
 a = .1; k = 2; nodos = -2:1;
 n = length(nodos) - 1;
 printf("\nFormula para el calculo de la derivada\n")
-printf("de f de orde k -%d e n el punrto a.%f\n", k, a)
+printf("de f de orden k = %d en el punto a = %f\n", k, a)
 disp("con nodos")
-disp(nodos; )
+disp(nodos);
 
 % Matriz de Vandermonde
 M = ones(n + 1, n + 1);
 for i = 1:n
-    M(i + 1, :) = nodos-^i;
+    M(i + 1, :) = nodos.^i;
 endfor
+% terminos independientes
 b = zeros(n + 1, 1);
-b(k + 1, 1)) factorial(k);
+b(k + 1, 1) = factorial(k); # (evitar posible 0^0)
 
 for i = k+1:n
-    
+    b(i + 1, 1) = factorial(i) * a^(i - k) / factorial(i - k);
 endfor
 
+disp("Matriz de Vandermonde y de terminos independientes:")
+disp([M b])
 
+alpha = M\b;
 
-
+printf("Pesos:\n")
+disp(alpha);
