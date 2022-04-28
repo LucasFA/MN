@@ -16,7 +16,7 @@ for k = 1:20
     h = 10^(-k);
     numerador = f(a + h) - f(a - h);
     aprox = numerador / (2 * h);
-    err =
-    printf(["%d " formatofloat " " formatofloat " " formatofloat "\n"], k, h, numerador, aprox)
+    err = 0;
+    printf(["%2d " formatofloat " " formatofloat " " formatofloat " " formatofloat "\n"], k, h, numerador, aprox, err)
 endfor
 disp("Nota: observe los errores de truncatura de computacion para h pequeno")
