@@ -22,5 +22,5 @@ disp(nodos);
 
 printf("Pesos:\n");
 alpha = pesosderiv(k, a, nodos);
-alpha = alpha'*(nodos.*exp(-nodos/3))'
-disp(alpha);
+sols = alpha' * (nodos .* exp(-nodos / 3))';
+disp(sols);
