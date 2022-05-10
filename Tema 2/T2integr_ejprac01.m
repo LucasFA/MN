@@ -1,4 +1,4 @@
-clc; 
+clc;
 % clear all; more off;
 
 function y = f(x)
@@ -23,7 +23,7 @@ aprox = pesos * f(nodos)';
 printf("Nodos"); disp(nodos);
 printf("Pesos"); disp(pesos);
 
-printf("Aprox: $14.10f error: $10.2f", aprox, aprox - exacto);
+printf("Aprox: %14.10f error: %10.2f", aprox, aprox - exacto);
 
 % Cerrada con 4 nodos
 [nodos pesos] = integralNC(a, b, 3, true, true);
