@@ -11,7 +11,9 @@ function [nodos pesos] = integralNC(a, b, n, izda, dcha)
         nodos(1) = [];
         n--;
     endif
-
+    
+    # resolvemos sistema M*pesos = c (SEL)
+    
     M = ones(n + 1, n + 1);
     M(2, :) = nodos;
     for i = 2:n
