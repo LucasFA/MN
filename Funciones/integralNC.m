@@ -1,6 +1,5 @@
 function [nodos pesos] = integralNC(a, b, n, izda, dcha)
     % izda y dcha indican si se incluye ese extremo
-    # TODO: fix this stupid interface
     nodos = linspace(a, b, n + 1);
 
     if !dcha
@@ -26,3 +25,4 @@ function [nodos pesos] = integralNC(a, b, n, izda, dcha)
 
     pesos = (M \ c)'(1,:);
 endfunction
+
