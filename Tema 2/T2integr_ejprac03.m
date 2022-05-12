@@ -10,7 +10,7 @@ exacto = quad(@f, a, b)
 
 disp(" Formula  n  eval  aprox error")
 disp("-------------------------------")
-formato = "%11s    %2d    %3d    %14.8f    %10.2e\n"
+formato = "%11s    %2d    %3d    %14.8f    %10.2e\n";
 
 # ------------------------------------------
 
@@ -19,7 +19,9 @@ disp("Newton-Cotes:")
 
 n = 0;
 do
-    n++; h = (b - a) / 2; s = 0;
+    n++; 
+    h = (b - a) / 2; 
+    s = 0;
     for i = 1:n
         [nodos pesos] = integralNC(a + (i - 1) * h, a + i * h, 4, false, false);
         s = s + pesos * f(nodos)';
@@ -50,6 +52,7 @@ do
 until abs(s - exacto) < TOL;
 
 printf(formato, "trapecio", n, n + 1, s, abs(s - exacto))
+
 disp("===================================================")
 disp("FINAL DEL EJERCICIO")
 disp("Observamos que trapecio no es eficiente")
