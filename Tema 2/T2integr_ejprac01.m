@@ -23,7 +23,7 @@ aprox = pesos * f(nodos)';
 printf("Nodos"); disp(nodos);
 printf("Pesos"); disp(pesos);
 
-printf("Aprox: %14.10f error: %10.2f", aprox, aprox - exacto);
+printf("Aprox: %14.10f error: %10.2f\n", aprox, aprox - exacto);
 
 % Cerrada con 4 nodos
 [nodos pesos] = integralNC(a, b, 3, true, true);
@@ -32,19 +32,19 @@ aprox = pesos * f(nodos)';
 printf("Nodos"); disp(nodos);
 printf("Pesos"); disp(pesos);
 
-printf("Aprox: $14.10f error: $10.2f", aprox, aprox - exacto);
+printf("Aprox: %14.10f error: %10.2f\n", aprox, aprox - exacto);
 
 
-% Abierta con 4 nodos
+% Abierta con 3 nodos
 [nodos pesos] = integralNC(a, b, 4, false, false);
 aprox = pesos * f(nodos)';
 
 printf("Nodos"); disp(nodos);
 printf("Pesos"); disp(pesos);
 
-printf("Aprox: $14.10f error: $10.2f", aprox, aprox - exacto);
+printf("Aprox: %14.10f error: %10.2f\n", aprox, aprox - exacto);
 
-% Semi dcha con 4 nodos
+% Semi dcha con 3 nodos
 
 [nodos pesos] = integralNC(a, b, 3, false, true);
 aprox = pesos * f(nodos)';
@@ -52,16 +52,16 @@ aprox = pesos * f(nodos)';
 printf("Nodos"); disp(nodos);
 printf("Pesos"); disp(pesos);
 
-printf("Aprox: $14.10f error: $10.2f", aprox, aprox - exacto);
+printf("Aprox: %14.10f error: %10.2f\n", aprox, aprox - exacto);
 
-% Semi izqda con 4 nodos
+% Semi izqda con 3 nodos
 [nodos pesos] = integralNC(a, b, 3, true, false);
 aprox = pesos * f(nodos)';
 
 printf("Nodos"); disp(nodos);
 printf("Pesos"); disp(pesos);
 
-printf("Aprox: $14.10f error: $10.2f", aprox, aprox - exacto);
+printf("Aprox: %14.10f error: %10.2f\n", aprox, aprox - exacto);
 
 disp("La mas precisa ha resultado ser la cerrada")
 disp("==========================================")
