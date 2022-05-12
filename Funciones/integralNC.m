@@ -18,11 +18,11 @@ function [nodos pesos] = integralNC(a, b, n, izda, dcha)
         M(i + 1, :) = nodos.^i;
     endfor
 
-    c = zeros(n + 1, i);
+    c = zeros(n + 1, 1);
     for i = 1:n + 1
         c(i, 1) = (b^i - a^i) / i;
     endfor
 
-    pesos = (M \ c)'(1,:);
+    pesos = (M \ c)';
 endfunction
 
