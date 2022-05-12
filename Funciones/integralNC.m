@@ -24,5 +24,5 @@ function [nodos pesos] = integralNC(a, b, n, izda, dcha)
         c(i, 1) = (b^i - a^i) / i;
     endfor
 
-    pesos = (M \ c)';
+    pesos = (M \ c)'(1,:);
 endfunction
