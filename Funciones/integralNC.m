@@ -13,6 +13,8 @@ function [nodos pesos] = integralNC(a, b, n, izda, dcha)
     endif
     
     # resolvemos sistema M*pesos = c (SEL)
+    # donde c es el vector del valor de las integrales de los polinomios de Lagrange (grado a grado)
+    # y M es 
     
     M = ones(n + 1, n + 1);
     M(2, :) = nodos;
