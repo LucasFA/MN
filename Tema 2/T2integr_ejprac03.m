@@ -8,19 +8,18 @@ endfunction
 a = 0; b = 3;
 exacto = quad(@f, a, b)
 
-disp(" Formula  n  eval  aprox error")
-disp("-------------------------------")
+disp("   Formula      n    eval         aprox          error")
+disp("---------------------------------------------------------")
 formato = "%11s    %2d    %3d    %14.8f    %10.2e\n";
 
 # ------------------------------------------
 
-disp("Newton-Cotes:")
 % NC
 
 n = 0;
 do
     n++; 
-    h = (b - a) / 2; 
+    h = (b - a) / n;
     s = 0;
     for i = 1:n
         [nodos pesos] = integralNC(a + (i - 1) * h, a + i * h, 4, false, false);
@@ -28,7 +27,7 @@ do
     endfor
 until abs(s - exacto) < TOL;
 
-printf(formato, " NewtonCotes", n, n * 3, s, abs(s - exacto))
+printf(formato, "NewtonCotes", n, n * 3, s, abs(s - exacto))
 
 # ------------------------------------------
 % Simpson
@@ -42,7 +41,7 @@ do
 
 until abs(s - exacto) < TOL;
 
-printf(formato, "simpson", n, 2 * n + 1, s, abs(s - exacto))
+printf(formato, "Simpson", n, 2 * n + 1, s, abs(s - exacto))
 # ------------------------------------------
 % trapecio
 n = 1;
@@ -51,10 +50,10 @@ do
     s = h / 2 * (f(a) + 2 * sum(f(linspace(a + h, b - h, n - 1))) + f(b));
 until abs(s - exacto) < TOL;
 
-printf(formato, "trapecio", n, n + 1, s, abs(s - exacto))
+printf(formato, "Trapecio", n, n + 1, s, abs(s - exacto))
 
-disp("===================================================")
+disp("=========================================================")
 disp("FINAL DEL EJERCICIO")
 disp("Observamos que trapecio no es eficiente")
-disp("Newton Cotes tiene bueb rendimiento, aunque es algo complicada")
+disp("Newton Cotes tiene buen rendimiento, aunque es algo complicada")
 disp("Simpson es mas sencilla y es muy eficiente")
