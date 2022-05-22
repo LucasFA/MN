@@ -6,7 +6,7 @@ function y = f(t, x)
     v0 = 30;
     g = 9.8;
     k = 0.002;
-    y = -g - k / m * x * abs(x) / m;
+    y = -g - k / m * x * abs(x);
 endfunction
 
 a = 0;
@@ -68,7 +68,7 @@ until (max(s1) <= 0);
 printf(formatoFinal, n, t1, [x1 s1]);
 # Ultima fila ^
 
-printf("Altura max: ")
-printf("Tiempo estimado de impacto; ")
+printf("Altura max: 4.55m, 4.79m, 4.67m, 4.69m\n")
+printf("Tiempo estimado de impacto; 2s, 2s, 2s, 2s\n\n")
 
 disp("¿Difiere algun metodo de los demas?")
