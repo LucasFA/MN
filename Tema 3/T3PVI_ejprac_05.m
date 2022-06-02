@@ -8,7 +8,7 @@ a = 0; b = 10; mu = 0; h = 0.1;
 
 x1 = f(a, mu, 0);
 
-N = round((b - a / h));
+N = round((b - a) / h);
 t = a * ones(1, N + 1);
 x = mu * ones(1, N + 1);
 
