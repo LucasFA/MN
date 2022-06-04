@@ -12,7 +12,7 @@ a = 0; b = 100; mu = 1;
 Ba = [0 0; 2/3 0];
 Bb = [1/4 3/4];
 Bc = [0 2/3];
-
+hold on
 for h = ah
     N = round((b - a) / h);
     t = a * ones(1, N + 1);
@@ -22,8 +22,8 @@ for h = ah
         [t(n + 1) x(n + 1)] = ButcherSemi(Ba, Bb, Bc, t(n), x(n), h);
     endfor
 
-    plot(t, x, [";h;=" num2str(h) ";"]);
+    plot(t, x, [";h = " num2str(h) ";"]);
 endfor
 
+hold off;
 disp("======================")
-
