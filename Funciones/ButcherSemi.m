@@ -41,14 +41,14 @@ function [t1 x1] = ButcherSemi(a, b, c, t0, x0, h)
         K(i) = 
             f(
                 t0 + c(i) * h, 
-                x0 + h * a(i, 1:i - 1) * K(1:i - 1)'
+                x0 + h * a(i, 1:(i - 1)) * K(1:(i - 1))'
             );
 
         if a(i, i)
             K(i) = fsolve(@(u)
                 f(
                     t0 + c(i) * h,
-                    x0 + h * a(i, 1:i - 1) * K(1:i - 1)' + h * a(i, i) * u
+                    x0 + h * (a(i, 1:(i - 1)) * K(1:(i - 1))' + a(i, i) * u)
                 )
                 - u,
                 K(i)
