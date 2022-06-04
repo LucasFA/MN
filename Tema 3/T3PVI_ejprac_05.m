@@ -1,7 +1,7 @@
 clc; clear all; more off;
 disp("Ejercicio 5")
-function y = f(t, x, x1)
-    y = fsolve(@(u) u^2 + t * x - exp(-u) - t, x1);
+function x_prima = f(t, x, x1)
+    x_prima = fsolve(@(u) u^2 + t * x - exp(-u) - t, x1);
 endfunction
 
 a = 0; b = 10; mu = 0; h = 0.1;
@@ -18,5 +18,5 @@ for n = 1:N
     x1 = (x(n + 1) - x(n)) / h; # proxima semilla
 endfor
 
-figure(1); clf; plot(t, x, ";xn;");
+waitfor(plot(t, x, ";xn;"));
 disp("==== FIN ====")
