@@ -34,7 +34,7 @@ function [t1 x1] = ButcherSemi(a, b, c, t0, x0, h)
             ) 
             - u, 
             K(1)
-            );
+        );
     endif
 
     for i = 2:m
@@ -52,7 +52,7 @@ function [t1 x1] = ButcherSemi(a, b, c, t0, x0, h)
                 )
                 - u,
                 K(i)
-                );
+            );
         endif
     endfor
 
