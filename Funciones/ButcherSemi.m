@@ -27,13 +27,32 @@ function [t1 x1] = ButcherSemi(a, b, c, t0, x0, h)
     m = length(c);
     K(1) = f(t0 + c(1) * h, x0);
     if a(1, 1)
-        K(1) = fsolve(@(u)f(t0 + c(1) * h, x0 + h * a(1, 1) * u) - u, K(1));
+        K(1) = fsolve(@(u) 
+            f(
+                t0 + c(1) * h, 
+                x0 + h * a(1, 1) * u
+            ) 
+            - u, 
+            K(1)
+            );
     endif
 
     for i = 2:m
-        K(i) = f(t0 + c(i) * h, x0 + h * a(i, 1:i - 1) * K(1:i - 1)');
+        K(i) = 
+            f(
+                t0 + c(i) * h, 
+                x0 + h * a(i, 1:i - 1) * K(1:i - 1)'
+            );
+
         if a(i, i)
-            K(i) = fsolve(@(u)f(t0 + c(i) * h, x0 + h * a(i, 1:i - 1) * K(1:i - 1)' + h * a(i, i) * u) - u, K(i));
+            K(i) = fsolve(@(u)
+                f(
+                    t0 + c(i) * h,
+                    x0 + h * a(i, 1:i - 1) * K(1:i - 1)' + h * a(i, i) * u
+                )
+                - u,
+                K(i)
+                );
         endif
     endfor
 
