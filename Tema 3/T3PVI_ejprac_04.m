@@ -21,8 +21,9 @@ for h = hvals
     N = (b - a) / h;
     t = a * ones(1, N + 1);
     x = mu * ones(1, N + 1);
+    % Nota: si t es un escalar, t(1) accede al valor
     for n = 1:N
-        [t(n + 1) x(n + 1)] = ButcherSemi(Butcher_a, Butcher_b, Butcher_c, t,x, h);
+        [t(n + 1) x(n + 1)] = ButcherSemi(Butcher_a, Butcher_b, Butcher_c, t(n), x(n), h);
     endfor
     plot(t, x, [";h=" num2str(h) ";"]);
 endfor
