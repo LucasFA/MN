@@ -34,7 +34,7 @@ for n = 1:N
 endfor
 
 hold on;
-h = plot(x(:, 1), x(:, 2), "r;RK4;", "linewidth", 3)
+h = plot(x(:, 1), x(:, 2), "r;RK4;", "linewidth", 3);
 disp("Son muy diferentes. Euler tendra un error muy grande");
 disp("=============FIN=============");
-waitfor(h)
+waitfor(h);
