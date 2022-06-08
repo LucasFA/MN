@@ -120,18 +120,16 @@ areaaprox = sum(areas_aprox);
 
 areas_exactas = zeros(1, length(t) - 1);
 for indice = 1:(length(t) - 1)
-    areas_exactas(indice) = trapecio_simple(t, indice, aprox);
+    areas_exactas(indice) = trapecio_simple(t, indice, valores_exacta);
 endfor
 areaexacta = sum(areas_exactas);
 
-% disp("")
-fmtfloat = "%12.8f";
-disp("El area usando trapecio con lo aproximado:")
-printf([fmtfloat "\n"], areaaprox);
-
-disp("El area usando trapecio con la solucion exacta:")
-printf([fmtfloat "\n"], areaexacta);
-
-disp("El valor exacto de la integral:")
 integral_exacta = quad(@solucion_exacta, 1, 3);
-printf([fmtfloat "\n"], integral_exacta);
+
+fmtfloat = "%18.8f";
+disp("Integral aproximada desde:")
+disp("Metodo                        aproximacion de la integral      error")
+disp("--------------------------------------------------------------------")
+printf(["Trapecio de solucion aproximada  " fmtfloat fmtfloat "\n"], areaaprox,       areaaprox - integral_exacta);
+printf(["Trapecio de solucion exacta      " fmtfloat fmtfloat "\n"], areaexacta,      areaexacta - integral_exacta);
+printf(["Exacta (usando quad)             " fmtfloat fmtfloat "\n"], integral_exacta, 0);
