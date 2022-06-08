@@ -24,7 +24,7 @@ plot(t, x, ";xn;");
 hold on
 disp("==== FIN ================================================")
 
-clc; clear all;
+clear all;
 disp("Ejercicio 6")
 
 function y = f(t, x, x1)
