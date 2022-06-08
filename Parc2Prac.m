@@ -109,24 +109,24 @@ endfunction
 
 % Aproximacion usando valores de la solucion aproximados:
 
-areas_aprox = zeros(1, length(t));
+areas_aprox = zeros(1, length(t) - 1);
 for indice = 1:(length(t) - 1)
-    areas_aprox(n) = trapecio_simple(t, indice, aprox);
+    areas_aprox(indice) = trapecio_simple(t, indice, aprox);
 endfor
 areaaprox = sum(areas_aprox);
 
 
 % Ahora usando los valores exactos de la solucion
 
-areas_exactas = zeros(1, length(t));
+areas_exactas = zeros(1, length(t) - 1);
 for indice = 1:(length(t) - 1)
-    areas_exactas(n) = trapecio_simple(t, indice, aprox);
+    areas_exactas(indice) = trapecio_simple(t, indice, aprox);
 endfor
 areaexacta = sum(areas_exactas);
 
 % disp("")
-disp("El area usando trapecio con lo aproximado:")
 fmtfloat = "%12.8f";
+disp("El area usando trapecio con lo aproximado:")
 printf([fmtfloat "\n"], areaaprox);
 
 disp("El area usando trapecio con la solucion exacta:")
