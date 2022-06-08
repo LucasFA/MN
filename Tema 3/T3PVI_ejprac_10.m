@@ -9,6 +9,8 @@ function y = sol(t)
 endfunction
 
 a = 0; b = 0.5;
+h = 0.1;
+N = (b - a) / h;
 fmt = "%6.2f";
 fmx = "%12.8f";
 fme = "%12.6e";
@@ -28,7 +30,7 @@ for n = 1:N
     K4 = f(t(n) + h, xn + h * K3);
     t(n + 1) = t(n) + h;
     exacta(:, n + 1) = sol(t(n + 1));
-    printf(formato t(n + 1), x(1, n + 1), x(2, n + 1))
+    printf(formato, t(n + 1), x(1, n + 1), x(2, n + 1))
 endfor
 disp("")
 
