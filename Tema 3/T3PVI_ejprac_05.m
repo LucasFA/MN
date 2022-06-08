@@ -1,7 +1,11 @@
 clc; clear all; more off;
 disp("Ejercicio 5")
+function ret = val_ecuac(t, x, x_prima)
+    ret = x_prima^2 + t * x - exp(-x_prima) - t;
+endfunction
+
 function x_prima = f(t, x, x1)
-    x_prima = fsolve(@(u) u^2 + t * x - exp(-u) - t, x1);
+    x_prima = fsolve(@(u) val_ecuac(t, x, u), x1);
 endfunction
 
 a = 0; b = 10; mu = 0; h = 0.1;

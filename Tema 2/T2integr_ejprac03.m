@@ -18,7 +18,7 @@ formato = "%11s    %2d    %3d    %14.8f    %10.2e\n";
 
 n = 0;
 do
-    n++; 
+    n++;
     h = (b - a) / n;
     s = 0;
     for i = 1:n
@@ -37,7 +37,7 @@ do
     s4 = sum(f(linspace(a + h / 2, b - h / 2, n))); # nodos de en medio (ponderados por 4/6)
     s2 = sum(f(linspace(a + h, b - h, n - 1))); # nodos de enlace
 
-    s = h / 6 * (f(a) + 4 * s4 + 2 * s2 +f(b));
+    s = h / 6 * (f(a) + 4 * s4 + 2 * s2 + f(b));
 
 until abs(s - exacto) < TOL;
 
