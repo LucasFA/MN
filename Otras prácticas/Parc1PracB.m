@@ -6,21 +6,21 @@ function y = g(x)
 endfunction
 
 t = linspace(-1, 1, 20);
-plot(t, t, 'b') # azul
+plot(t, t, 'b;bisectriz;') # azul
 hold on;
-plot(t, g(t), 'r') # rojo
-plot(t, 0, 'k')
+plot(t, g(t), 'r;g(t);') # rojo
+plot(t, zeros(1,20),'--k;t = 0;')
 hold off;
 
-printf("Observamos que g tiene una pendiente negativa muy baja: podemos asegurar que |g(x)| < 1 para todo x en un entorno ")
-printf("que incluye tanto a la raiz de f como a la semilla x0 = 0.25.\n")
+disp("Observamos que g tiene una pendiente negativa muy baja: podemos asegurar que |g(x)| < 1 para todo x en un entorno ")
+disp("que incluye tanto a la raiz de f como a la semilla x0 = 0.25.")
 disp("Por tanto, podemos asegurar la convergencia del metodo de iteracion funcional, recordando el teorema de convergencia global")
 
 % -----------------------------------------------
 # Apartado 2
-printf("\n")
-printf("Tabla de iteraciones de Steffensen:\n");
-printf("Iteracion   aproximacion   diferencia absoluta\n");
+disp("")
+disp("Tabla de iteraciones de Steffensen:");
+disp("Iteracion   aproximacion   diferencia absoluta");
 
 formato = "%18.8f";
 formatoFinal = ["  %2d " formato formato "\n"];
@@ -33,8 +33,8 @@ xanterior = 0.25;
 iteraciones = 0;
 
 printf(formatoFinal, iteraciones, xanterior, err);
-do
 
+do
     x(1) = xanterior;
     for i = 2:3
         x(i) = g(x(i - 1));
