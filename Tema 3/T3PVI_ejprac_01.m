@@ -1,3 +1,4 @@
+% Trayectoria proyectil
 clc; clear all; more off;
 
 % Ec diferencial: v' = -g - k/m * v*abs(v)

@@ -1,3 +1,4 @@
+% Compuesta
 clc; clear all;
 disp("EJERCICIO 3")
 TOL = 1e-4;

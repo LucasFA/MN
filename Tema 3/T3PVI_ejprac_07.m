@@ -1,3 +1,4 @@
+% Modelo Gompertz mapa logistico
 clc; clear all; more off;
 
 function y = f(t, x)

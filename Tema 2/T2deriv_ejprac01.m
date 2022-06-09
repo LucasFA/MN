@@ -1,5 +1,5 @@
 clc; clear all; more off;
-
+% Centrada 3 nodos
 function y = f(x)
     y = x.^3;
 endfunction

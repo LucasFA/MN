@@ -1,5 +1,5 @@
 clc; clear all;
-
+% interpolatorio clasico
 function alpha = pesosderiv(k, a, nodos)
     n = length(nodos) - 1;
     M = ones(n + 1, n + 1);

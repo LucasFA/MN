@@ -1,3 +1,4 @@
+% PVI implícito
 clc; clear all; more off;
 function y = f(t, x, x1)
     y = fsolve(@(u) u^2 + t * x - exp(-u) - t, x1);

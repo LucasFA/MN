@@ -1,6 +1,6 @@
 clc;
 % clear all; more off;
-
+% Newton Cotes
 function y = f(x)
     y = exp(-x.^2/3);
 endfunction

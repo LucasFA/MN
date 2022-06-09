@@ -1,3 +1,4 @@
+% RK2 Butcher
 clc; clear all; more off;
 
 hvals = [2, 1, 0.5, 0.25];

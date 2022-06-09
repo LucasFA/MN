@@ -1,5 +1,5 @@
 clc; clear all; more off;
-
+% Interpolatorio clásico
 disp("Ejercicio 2. Derivacion numerica")
 
 a = -1; k = 2; nodos = -2:1;

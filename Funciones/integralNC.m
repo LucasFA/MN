@@ -1,3 +1,4 @@
+% Newton Cotes
 function [nodos pesos] = integralNC(a, b, n, izda, dcha)
     % izda y dcha indican si se incluye ese extremo
     nodos = linspace(a, b, n + 1);

@@ -1,5 +1,5 @@
 #   TODO: eliminar cálculos redundantes de s.
-
+% Euler Euler punto medio 
 clc;
 function y = f(t, x)
     y = x - t^2 + 1;
